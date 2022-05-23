@@ -10,9 +10,10 @@ let canTurn = true;
 
 function setup() {
     score = 0;
-    document.getElementById("header").innerHTML = "Score: 0";
+    document.getElementById("head").innerHTML = "Score: 0";
     document.getElementById("info").innerHTML = null;
-    createCanvas(width, height);
+    var canvas = createCanvas(width, height);
+    canvas.parent("canvas");
     frameRate(10);
 
     snake = [];
@@ -126,7 +127,7 @@ function eat() {
     }
 
     score += 10;
-    document.getElementById("header").innerHTML = "Score: " + score;
+    document.getElementById("head").innerHTML = "Score: " + score;
     snake.push([0, 0]);
 }
 
@@ -136,7 +137,7 @@ function generateFood() {
 }
 
 function gameOver() {
-    document.getElementById("header").innerHTML = "Game Over";
+    document.getElementById("head").innerHTML = "Game Over";
     document.getElementById("info").innerHTML = "Your score is: " + score + "! Press space to play again!";
     frameRate(0);
 }
