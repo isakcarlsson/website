@@ -2,9 +2,9 @@ let snake = [];
 let direction = 0;
 let food = [110, 110];
 
-let width = 800;
-let height = 800;
-let bodySize = 40;
+let width = 400;
+let height = 400;
+let bodySize = 20;
 let score = 0;
 let canTurn = true;
 

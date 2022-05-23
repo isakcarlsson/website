@@ -20,30 +20,50 @@
             <a href="#projects" id="header-link">Projects</a>
             <a href="#about" id="header-link">About me</a>
             <a href="#games" id="header-link">Games</a>
-            <a href="/snake/snake.html" id="header-link">Play snake</a>
         </div>    
     </div>
 
     <div id="introduction">
         <h1 id="heading">Introduction</h1>
-        <p>This website is hosted by my Raspberry Pi 4.</p>
+        <p>Hello, my name is Isak and I'm a software engineering at Linneus University in Kalmar.
+            <br>
+        </p>
+        <p>This website is hosted by a apache2 server on my Raspberry Pi 4.</p>
     </div>
 
     <div id="projects">
         <h1 id="heading">Projects</h1>
         <p>Hello mother fucker</p>
+        <img src="img/grillplatsify.png" alt="Grillplatsify">
+        <!-- Ny Teknik -->
+        <!-- https://www.nyteknik.se/digitalisering/ingenjorsstudenternas-losning-visar-om-grillplatserna-ar-lediga-7008921 -->
+        <!-- SVT -->
+        <!-- www.svt.se/nyheter/lokalt/smaland/grillplatsapp -->
     </div>
 
     <div id="about">
         <h1 id="heading">About me</h1>
         <p>Hello mother fucker</p>
-        <iframe id="youtube" width="420" height="315" src="https://www.youtube.com/watch?v=8DNW_N2fHwA">
-        </iframe>
+
+        <p>Here are two Youtube videos from when I were in Chamonix and Saalbach:</p>
+        <div id="youtube">
+            <iframe width="420" height="240" 
+            src="https://www.youtube.com/embed/79Y13t8W07c" allowfullscreen>
+            </iframe>
+            <iframe width="420" height="240" 
+            src="https://www.youtube.com/embed/NDRWrybsiow" allowfullscreen>
+            </iframe>
+        </div>
     </div>
 
     <div id="games">
         <h1 id="heading">Games</h1>
-        <p>Hello mother fucker</p>
+        <p>Here are some web based games that I have made, feel free to test them out.</p>
+
+        <div id="snake" onclick="location.href='snake/snake.html'">
+            <img src="img/snake.png" alt="Snake">
+            <h3>Snake</h3>
+        </div>
     </div>
 </body>
 </html>

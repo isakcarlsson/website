@@ -43,6 +43,7 @@ p {
 
 #logo {
   /* width: 50%; */
+  position: fixed;
   display: flex;
   flex-direction: row;
 }
@@ -76,8 +77,9 @@ p {
 
 #youtube {
   /* box-sizing: border-box; */
-  margin: 0 auto;
+  margin: 10px;
   display: block;
+  text-align: center;
 }
 
 #games {
@@ -104,6 +106,29 @@ p {
   text-align: center;
   background-color: rgb(138, 196, 255);
   z-index: -1;
+}
+
+#games div {
+  background-color: rgb(138, 196, 255);
+  width: 200px;
+  margin-left: 10%;
+}
+
+#games div:hover {
+  cursor: pointer;
+}
+
+#games div h3 {
+  text-align: center;
+}
+
+#games img {
+  /* border-radius: 50%; */
+  padding: 10px;
+  width: 200px;
+  height: 200px;
+  box-sizing: border-box;
+  text-align: center;
 }
 
 #cv {
