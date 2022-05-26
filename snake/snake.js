@@ -2,9 +2,9 @@ let snake = [];
 let direction = 0;
 let food = [110, 110];
 
-let width = 400;
-let height = 400;
-let bodySize = 20;
+let bodySize = Math.floor(Math.min(window.innerWidth, window.innerHeight - 250) / 20);
+let width = bodySize * 20 - bodySize;
+let height = bodySize * 20 - bodySize;
 let score = 0;
 let canTurn = true;
 
@@ -17,21 +17,21 @@ function setup() {
     frameRate(10);
 
     snake = [];
-    
-    for(let i = 0; i < 3; i++) {
-        snake.push([width / 2 + bodySize / 2, height / 2 + bodySize / 2]);
+
+    for (let i = 0; i < 3; i++) {
+        snake.push([width / 2, height / 2]);
     }
-    
+
     generateFood();
 }
 
 function draw() {
     canTurn = true;
     background(0, 150, 0);
-    
+
     //Draw snake
     let p = 255;
-    
+
     for (let i = 0; i < snake.length; i++) {
         fill(p);
         p -= 10;
@@ -90,25 +90,45 @@ function detectCrash() {
 }
 
 function keyPressed() {
-    if(!canTurn && keyCode != 32) {
+    if (!canTurn && keyCode != 32) {
         return;
     }
     canTurn = false;
-    
+
     if (keyCode == LEFT_ARROW && direction != 1) {
         direction = 0;
-        // snake[0][0] -= 20;
     } else if (keyCode == RIGHT_ARROW && direction != 0) {
         direction = 1;
-        // snake[0][0] += 20;
     } else if (keyCode == UP_ARROW && direction != 3) {
         direction = 2;
-        // snake[0][1] -= 20;
     } else if (keyCode == DOWN_ARROW && direction != 2) {
         direction = 3;
-        // snake[0][1] += 20;
     } else if (keyCode == 32) {
         setup();
+    }
+}
+
+function touchStarted() {
+    if(mouseX > width / 2) {
+        if(direction == 0) {
+            direction = 2;
+        } else if (direction == 1) {
+            direction = 3;
+        } else if (direction == 2){
+            direction = 1;
+        } else if(direction == 3) {
+            direction = 0;
+        }
+    } else {
+        if(direction == 0) {
+            direction = 3;
+        } else if (direction == 1) {
+            direction = 2;
+        } else if (direction == 2){
+            direction = 0;
+        } else if(direction == 3) {
+            direction = 1;
+        }
     }
 }
 

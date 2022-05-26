@@ -154,7 +154,7 @@ p {
 
 #canvas {
   position: fixed;
-  padding: 100px;
+  padding-top: 100px;
   width: 100%;
   box-sizing: border-box;
   height: 100%;
