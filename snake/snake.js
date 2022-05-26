@@ -7,8 +7,10 @@ let width = bodySize * 20 - bodySize;
 let height = bodySize * 20 - bodySize;
 let score = 0;
 let canTurn = true;
+let isGameOver = false;
 
 function setup() {
+    isGameOver = false;
     score = 0;
     document.getElementById("head").innerHTML = "Score: 0";
     document.getElementById("info").innerHTML = null;
@@ -26,7 +28,6 @@ function setup() {
 }
 
 function draw() {
-    canTurn = true;
     background(0, 150, 0);
 
     //Draw snake
@@ -49,6 +50,7 @@ function draw() {
     //Draw food
     fill(255, 0, 0);
     circle(food[0], food[1], bodySize)
+    canTurn = true;
 }
 
 function moveHead() {
@@ -109,6 +111,11 @@ function keyPressed() {
 }
 
 function touchStarted() {
+    if (!canTurn && keyCode != 32) {
+        return;
+    }
+    canTurn = false;
+
     if(mouseX > width / 2) {
         if(direction == 0) {
             direction = 2;
@@ -129,6 +136,16 @@ function touchStarted() {
         } else if(direction == 3) {
             direction = 1;
         }
+    }
+     if(isGameOver) {
+        setup();
+     }
+}
+
+function touchEnded() {
+    console.log(mouseY)
+    if(mouseY > -100) {
+        return false;
     }
 }
 
@@ -157,6 +174,7 @@ function generateFood() {
 }
 
 function gameOver() {
+    isGameOver = true;
     document.getElementById("head").innerHTML = "Game Over";
     document.getElementById("info").innerHTML = "Your score is: " + score + "! Press space to play again!";
     frameRate(0);
