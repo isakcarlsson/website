@@ -47,10 +47,6 @@ p {
     cursor: pointer;
   }
 
-  .burger:checked {
-    background-color: red;
-  }
-
   #bar {
     margin-top: 7px;
     width: 40px;
@@ -215,7 +211,7 @@ p {
   border-bottom-style: solid;
   border-color: black;
   font-size: 24px;
-  padding: 15%;
+  padding: 10%;
   text-decoration: none;
   display: block;
   text-align: center;
