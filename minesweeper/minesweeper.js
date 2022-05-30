@@ -49,15 +49,6 @@ let height = cellSize * gridSize;
 let grid = [];
 let color = [[0, 0, 255], [0, 150, 0], [255, 0, 0], [0,0,70], [130,0,0], [102, 51, 0], [100,100,100], [0,0,0]]
 
-document.oncontextmenu = function (event) {
-    if (mouseX >= 0 && mouseX < cellSize * gridSize && mouseY >= 0 && mouseY < cellSize * gridSize) {
-        var x = Math.floor(mouseX / cellSize);
-        var y = Math.floor(mouseY / cellSize);
-        grid[x][y].flaged = grid[x][y].flaged ? false : true;
-    }
-    return false;
-}
-
 
 function setup() {
     totalBombs = 0;
@@ -121,6 +112,16 @@ function mouseClicked(event) {
             }
         }
     }
+}
+
+document.oncontextmenu = function (event) {
+    if (mouseX >= 0 && mouseX < cellSize * gridSize && mouseY >= 0 && mouseY < cellSize * gridSize) {
+        var x = Math.floor(mouseX / cellSize);
+        var y = Math.floor(mouseY / cellSize);
+        grid[x][y].flaged = grid[x][y].flaged ? false : true;
+        window.navigator.vibrate(100);
+    }
+    return false;
 }
 
 function createGrid() {

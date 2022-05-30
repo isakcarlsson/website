@@ -148,12 +148,24 @@ p {
   position: fixed;
   padding-top: 100px;
   width: 100%;
-  box-sizing: border-box;
   height: 100%;
+  display:flexbox;
+  flex-direction:column;
   text-align: center;
   background-color: rgb(138, 196, 255);
   z-index: -1;
 }
+
+#canvas button {
+  margin: 10px;
+  width: 15%;
+  height: 50px;
+  border-radius: 25px;
+  background-color: rgb(103, 175, 247);
+  text-align: center;
+}
+
+
 
 #games div {
   background-color: rgb(138, 196, 255);
