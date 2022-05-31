@@ -47,7 +47,7 @@ let cellSize = Math.floor(Math.min(window.innerWidth, window.innerHeight - 250) 
 let width = cellSize * gridSize;
 let height = cellSize * gridSize;
 let grid = [];
-let color = [[0, 0, 255], [0, 150, 0], [255, 0, 0], [0,0,70], [130,0,0], [102, 51, 0], [100,100,100], [0,0,0]]
+let color = [[0, 0, 255], [0, 150, 0], [255, 0, 0], [0,0,70], [130,0,0], [102, 51, 0], [100,100,100], [0,0,0]];
 
 
 function setup() {
